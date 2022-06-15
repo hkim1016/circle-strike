@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 0.01f;
-
-    //private void Start()
-    //{
-    //    if (this.tag == "Red Player")
-    //    {
-    //        Debug.Log("hello");
-    //    }
-    //    if(this.tag == "Blue Player")
-    //    {
-    //        Debug.Log("blue");
-    //    }
-    //}
+    [SerializeField] float moveSpeed = 5f;
+    public static Vector3 vel;
 
     // Update is called once per frame
     void Update()
@@ -62,5 +51,14 @@ public class PlayerControl : MonoBehaviour
                 this.transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
             }
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Debug.Log(collision.rigidbody.velocity);
+        //Debug.Log(collision.collider.bounds);
+        //collision.rigidbody.velocity = Vector3.Reflect(transform.position, collision.contacts[0].normal);
+        //vel = collision.relativeVelocity;
+
     }
 }
