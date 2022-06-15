@@ -22,6 +22,6 @@ public class BallMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Vector3 direction = (collision.transform.position - transform.position).normalized;
-        rigidbody2D.AddForce(-direction * 1f, (ForceMode2D)ForceMode.Impulse);
+        rigidbody2D.AddForce(-direction * 2f, (ForceMode2D)ForceMode.Impulse);
     }
 }
